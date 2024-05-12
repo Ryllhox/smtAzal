@@ -1,0 +1,31 @@
+﻿<Page x:Class="smtAzal.AdminSalonPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:smtAzal"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AdminSalonPage">
+
+    <Border Background="LemonChiffon" BorderBrush="DarkKhaki" BorderThickness="2" CornerRadius="5" Padding="10" Margin="5">
+        <Grid>
+            <ListView x:Name="lvSalons" SelectionMode="Single">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="КОД" DisplayMemberBinding="{Binding Id}"/>
+                        <GridViewColumn Header="Название" DisplayMemberBinding="{Binding Name}"/>
+                        <GridViewColumn Header="Адресс" DisplayMemberBinding="{Binding Address}"/>
+                        <GridViewColumn Header="Рейтинг" DisplayMemberBinding="{Binding Rating}"/>
+                        <GridViewColumn Header="Описание" DisplayMemberBinding="{Binding Description}"/>
+                        <GridViewColumn Header="Часы работы" DisplayMemberBinding="{Binding WorkingHours}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <Button Content="Добавить салон" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,10"
+                Click="AddSalon_Click"/>
+            <Button Content="Разрушить салон" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,130,10"
+                Click="DeleteSalon_Click"/>
+        </Grid>
+    </Border>
+</Page>

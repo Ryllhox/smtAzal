@@ -1,0 +1,30 @@
+﻿<Page x:Class="smtAzal.AdminAppointmentPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:smtAzal"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AdminAppointmentPage">
+
+    <Border Background="LemonChiffon" BorderBrush="DarkKhaki" BorderThickness="2" CornerRadius="5" Padding="10" Margin="5">
+        <Grid>
+            <ListView x:Name="lvAppointments" SelectionMode="Single">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="КОД" DisplayMemberBinding="{Binding Id}"/>
+                        <GridViewColumn Header="Человек" DisplayMemberBinding="{Binding User.FirstName}"/>
+                        <GridViewColumn Header="Услуга" DisplayMemberBinding="{Binding Service.Name}"/>
+                        <GridViewColumn Header="Дата" DisplayMemberBinding="{Binding DateTime}"/>
+                        <GridViewColumn Header="Статус" DisplayMemberBinding="{Binding Status}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <Button Content="Установить выполненным" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10"
+                Click="SetDone_Click"/>
+            <Button Content="Установить отклоненным" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10"
+                Click="SetRejected_Click"/>
+        </Grid>
+    </Border>
+</Page>
